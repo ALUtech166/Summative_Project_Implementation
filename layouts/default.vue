@@ -36,13 +36,7 @@
 
           <li @click="closeMenu">
             <nuxt-link to="/" :class="$route.path === '/' ? 'active' : ''"
-              class="text-black font-medium	hover:text-blue-800 text-md hover:no-underline">Services</nuxt-link>
-          </li>
-
-
-          <li @click="closeMenu">
-            <nuxt-link to="/" :class="$route.path === '/' ? 'active' : ''"
-              class="text-black font-medium	hover:text-blue-800 text-md hover:no-underline">Blog</nuxt-link>
+              class="text-black font-medium	hover:text-blue-800 text-md hover:no-underline">Products</nuxt-link>
           </li>
 
 
@@ -57,7 +51,25 @@
 
         </ul>
 
-        <div class="tw-flex tw-gap-4">
+        <div class="tw-flex tw-flex-col lg:tw-flex-row tw-items-center tw-gap-2">
+
+          <div class="tw-bg-white tw-items-center tw-justify-between tw-w-full tw-flex">
+
+            <v-text-field label="What are you looking for?"></v-text-field>
+            <!-- 
+            <v-autocomplete v-model="selectedItem3" :items="items3" label="Item 3" /> -->
+            <div class="bg-color tw-p-2 hover:tw-bg-blue-400 tw-cursor-pointer tw-mx-2 tw-rounded-full">
+
+              <svg class="tw-w-5 tw-h-5 tw-text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                fill="currentColor">
+                <path fill-rule="evenodd"
+                  d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                  clip-rule="evenodd" />
+              </svg>
+
+            </div>
+
+          </div>
 
           <svg width="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -68,15 +80,23 @@
                 stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
             </g>
           </svg>
-          <svg width="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-            <g id="SVGRepo_iconCarrier">
-              <path
-                d="M6.29977 5H21L19 12H7.37671M20 16H8L6 3H3M9 20C9 20.5523 8.55228 21 8 21C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19C8.55228 19 9 19.4477 9 20ZM20 20C20 20.5523 19.5523 21 19 21C18.4477 21 18 20.5523 18 20C18 19.4477 18.4477 19 19 19C19.5523 19 20 19.4477 20 20Z"
-                stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-            </g>
-          </svg>
+
+          <div class="tw-flex tw-flex-col">
+            <span v-if="$store.state.cart.length > 0"
+              class="tw-text-white tw-bg-blue-800 tw-px-2 tw-text-center tw-text-xs tw-py-1 tw-rounded-full tw-transform tw-translate-x-3">
+              {{ $store.state.cart.length }}
+            </span>
+            <svg width="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+              <g id="SVGRepo_iconCarrier">
+                <path
+                  d="M6.29977 5H21L19 12H7.37671M20 16H8L6 3H3M9 20C9 20.5523 8.55228 21 8 21C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19C8.55228 19 9 19.4477 9 20ZM20 20C20 20.5523 19.5523 21 19 21C18.4477 21 18 20.5523 18 20C18 19.4477 18.4477 19 19 19C19.5523 19 20 19.4477 20 20Z"
+                  stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </g>
+            </svg>
+
+          </div>
 
         </div>
 
