@@ -2,13 +2,13 @@
   <div class="font-sans tw-flex tw-flex-col tw-opacity-90">
 
 
-    <header class="lg:tw-fixed tw-top-0 tw-left-0 tw-right-0 tw-bg-transparent tw-z-50">
+    <header class=" tw-top-0 tw-left-0 tw-right-0 tw-bg-transparent tw-z-50">
       <nav
         class="tw-bg-transparent tw-mx-auto tw-flex tw-flex-wrap tw-gap-4 tw-px-8 lg:tw-justify-around tw-justify-between tw-items-center tw-py-6">
         <div>
           <nuxt-link to="/">
             <h1 class="tw-text-4xl tw-font-extrabold text-color">
-              e-pharma
+              E-pharma
             </h1>
           </nuxt-link>
 
@@ -52,16 +52,32 @@
           </li>
 
 
-         
+
 
 
         </ul>
 
         <div class="tw-flex tw-gap-4">
 
-        <svg width="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12 6.00019C10.2006 3.90317 7.19377 3.2551 4.93923 5.17534C2.68468 7.09558 2.36727 10.3061 4.13778 12.5772C5.60984 14.4654 10.0648 18.4479 11.5249 19.7369C11.6882 19.8811 11.7699 19.9532 11.8652 19.9815C11.9483 20.0062 12.0393 20.0062 12.1225 19.9815C12.2178 19.9532 12.2994 19.8811 12.4628 19.7369C13.9229 18.4479 18.3778 14.4654 19.8499 12.5772C21.6204 10.3061 21.3417 7.07538 19.0484 5.17534C16.7551 3.2753 13.7994 3.90317 12 6.00019Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
-        <svg width="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6.29977 5H21L19 12H7.37671M20 16H8L6 3H3M9 20C9 20.5523 8.55228 21 8 21C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19C8.55228 19 9 19.4477 9 20ZM20 20C20 20.5523 19.5523 21 19 21C18.4477 21 18 20.5523 18 20C18 19.4477 18.4477 19 19 19C19.5523 19 20 19.4477 20 20Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
-        
+          <svg width="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M12 6.00019C10.2006 3.90317 7.19377 3.2551 4.93923 5.17534C2.68468 7.09558 2.36727 10.3061 4.13778 12.5772C5.60984 14.4654 10.0648 18.4479 11.5249 19.7369C11.6882 19.8811 11.7699 19.9532 11.8652 19.9815C11.9483 20.0062 12.0393 20.0062 12.1225 19.9815C12.2178 19.9532 12.2994 19.8811 12.4628 19.7369C13.9229 18.4479 18.3778 14.4654 19.8499 12.5772C21.6204 10.3061 21.3417 7.07538 19.0484 5.17534C16.7551 3.2753 13.7994 3.90317 12 6.00019Z"
+                stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </g>
+          </svg>
+          <svg width="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <path
+                d="M6.29977 5H21L19 12H7.37671M20 16H8L6 3H3M9 20C9 20.5523 8.55228 21 8 21C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19C8.55228 19 9 19.4477 9 20ZM20 20C20 20.5523 19.5523 21 19 21C18.4477 21 18 20.5523 18 20C18 19.4477 18.4477 19 19 19C19.5523 19 20 19.4477 20 20Z"
+                stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </g>
+          </svg>
+
         </div>
 
       </nav>
@@ -83,7 +99,7 @@
           <v-col class="tw-text-left tw-mt-8" cols="12" md="3" lg="3">
             <nuxt-link to="/">
               <h1 class="tw-text-4xl tw-font-extrabold tw-mb-4 tw-text-color">
-                e-pharma
+                E-pharma
               </h1>
             </nuxt-link>
             <p class="tw-text-white tw-text-sm">
@@ -1027,11 +1043,11 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Poppins&display=swap');
 
 footer {
-  background-color: #004225;
+  background-color: #043CAA;
 }
 
 button {
-  border: 0.5px solid #004225;
+  border: 0.5px solid #043CAA;
 }
 
 button:hover {
@@ -1039,11 +1055,11 @@ button:hover {
 }
 
 .text-color {
-  color: #004225;
+  color: #043CAA;
 }
 
 .bg-color {
-  background-color: #004225;
+  background-color: #043CAA;
 }
 
 .font-sans {
@@ -1174,4 +1190,5 @@ button:hover {
 
 .fadeIn {
   animation-name: fadeIn;
-}</style>
+}
+</style>
