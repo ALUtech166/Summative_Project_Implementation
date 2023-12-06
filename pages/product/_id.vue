@@ -1,7 +1,7 @@
 <template>
   <div class="tw-bg-white tw-p-6 tw-rounded-md tw-shadow-md">
 
-    <div class="tw-flex tw-flex-col lg:tw-flex-row tw-justfy-between tw-gap-12">
+    <div v-if="product" class="tw-flex tw-flex-col lg:tw-flex-row tw-justfy-between tw-gap-12">
       <div class="tw-w-1/2">
         <img :src="product.image" alt="Product Image"
           class="tw-w-full tw-object-cover tw-rounded-md tw-transition-transform tw-transform tw-hover:tw-scale-105">
@@ -26,7 +26,7 @@
             </span>
           </button>
 
-          <button @click="navigateToProduct"
+          <button
             class="tw-group bg-hover tw-shadow-lg tw-rounded-lg tw-relative tw-h-12 tw-mt-2 tw-cursor-pointer hover:tw-transform hover:tw-duration-300 tw-w-48 tw-overflow-hidden tw-rounded-lg tw-text-lg tw-shadow-2xl">
 
             <div
@@ -61,24 +61,32 @@
 export default {
   data() {
     return {
-      product: {
-        id: 1, name: 'Product 1', price: 19.99, description: ' Our platform provides a seamless experience for individuals seeking medications by partnering with major insurance providers to ensure coverage and cost-effectiveness. Users can shop for a wide range of approved medications at competitive prices, offering convenience and accessibility. Our licensed pharmacists are readily available to address any concerns, providing information on pricing, allergies, side-effects, and more. As a comprehensive healthcare platform, we aim to simplify the process of acquiring quality medications, fostering a trusted space where users can confidently shop for their health needs.',
-        image: 'https://img.freepik.com/free-photo/white-pill-bottle-orange-pills-against-white-background_181624-839.jpg?w=740&t=st=1698871967~exp=1698872567~hmac=f30fe6a5d9d9727572221b21a319e2f1be6630db57215d90ab553696a9d2fd40'
-      },
+      product: null,
 
       products: [
         { id: 1, name: 'Product 1', price: 19.99, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: 'https://img.freepik.com/free-photo/white-pill-bottle-orange-pills-against-white-background_181624-839.jpg?w=740&t=st=1698871967~exp=1698872567~hmac=f30fe6a5d9d9727572221b21a319e2f1be6630db57215d90ab553696a9d2fd40' },
         { id: 2, name: 'Product 2', price: 29.99, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: 'https://img.freepik.com/free-photo/white-pill-bottle-orange-pills-against-white-background_181624-839.jpg?w=740&t=st=1698871967~exp=1698872567~hmac=f30fe6a5d9d9727572221b21a319e2f1be6630db57215d90ab553696a9d2fd40' },
         // Add more products as needed
-        { id: 3, name: 'Product 2', price: 29.99, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: 'https://img.freepik.com/free-photo/white-pill-bottle-orange-pills-against-white-background_181624-839.jpg?w=740&t=st=1698871967~exp=1698872567~hmac=f30fe6a5d9d9727572221b21a319e2f1be6630db57215d90ab553696a9d2fd40' },
-        { id: 4, name: 'Product 2', price: 29.99, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: 'https://img.freepik.com/free-photo/white-pill-bottle-orange-pills-against-white-background_181624-839.jpg?w=740&t=st=1698871967~exp=1698872567~hmac=f30fe6a5d9d9727572221b21a319e2f1be6630db57215d90ab553696a9d2fd40' },
-
+        { id: 3, name: 'Product 3', price: 39.99, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: 'https://img.freepik.com/free-photo/white-pill-bottle-orange-pills-against-white-background_181624-839.jpg?w=740&t=st=1698871967~exp=1698872567~hmac=f30fe6a5d9d9727572221b21a319e2f1be6630db57215d90ab553696a9d2fd40' },
+        { id: 4, name: 'Product 4', price: 49.99, description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: 'https://img.freepik.com/free-photo/white-pill-bottle-orange-pills-against-white-background_181624-839.jpg?w=740&t=st=1698871967~exp=1698872567~hmac=f30fe6a5d9d9727572221b21a319e2f1be6630db57215d90ab553696a9d2fd40' },
 
       ],
 
 
     };
   },
+
+  mounted() {
+    const product_id = this.$route.params.id
+
+    this.product = this.products.find(product => product.id == product_id)
+
+    console.log(product_id)
+    console.log(this.products)
+    console.log(this.product)
+  },
+
+
   methods: {
     addToCart() {
       // Implement logic to add the product to the shopping cart

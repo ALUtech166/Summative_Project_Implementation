@@ -54,7 +54,7 @@
                     </span>
                 </button>
 
-                <button @click="navigateToProduct"
+                <button @click="$router.push(`/product/${product.id}`)"
                     class="tw-group bg-hover tw-shadow-lg tw-rounded-lg tw-relative tw-h-12 tw-mt-2 tw-cursor-pointer hover:tw-transform hover:tw-duration-300 tw-w-48 tw-overflow-hidden tw-rounded-lg tw-text-lg tw-shadow-2xl">
 
                     <div

@@ -8,7 +8,7 @@
         <div>
           <nuxt-link to="/">
             <h1 class="tw-text-4xl tw-font-extrabold text-color">
-              E-pharma
+              EP
             </h1>
           </nuxt-link>
 
@@ -31,12 +31,6 @@
           <li @click="closeMenu">
             <nuxt-link to="/" :class="$route.path === '/' ? 'active' : ''"
               class="text-black font-medium	hover:text-blue-800 text-md hover:no-underline">Home</nuxt-link>
-          </li>
-
-
-          <li @click="closeMenu">
-            <nuxt-link to="/" :class="$route.path === '/' ? 'active' : ''"
-              class="text-black font-medium	hover:text-blue-800 text-md hover:no-underline">Products</nuxt-link>
           </li>
 
 
@@ -81,7 +75,7 @@
             </g>
           </svg>
 
-          <div class="tw-flex tw-flex-col">
+          <div class="tw-flex tw-flex-col" @click="$router.push(`/cart`)">
             <span v-if="$store.state.cart.length > 0"
               class="tw-text-white tw-bg-blue-800 tw-px-2 tw-text-center tw-text-xs tw-py-1 tw-rounded-full tw-transform tw-translate-x-3">
               {{ $store.state.cart.length }}
@@ -123,15 +117,10 @@
               </h1>
             </nuxt-link>
             <p class="tw-text-white tw-text-sm">
-              Every image featured on this website has been designed using Canvas.
-            </p>
+              Expert guidance from our licensed pharmacists. </p>
             <form class="tw-mt-2 tw-bg-transparent">
 
               <div class="tw-w-full tw-md:w-1/2">
-                <label class="tw-block tw-font-extrabold tw-mb-1" for="email">
-                  Subcribe Now
-                </label>
-
                 <input type="email" name="email" id="email" placeholder="email@example.com"
                   class="tw-block  tw-bg-gray-300 tw-placeholder-gray-500 tw-w-full  tw-text-black tw-shadow-xl tw-rounded-lg tw-outline-none  tw-mb-1 tw-p-3"
                   required>
@@ -152,43 +141,37 @@
 
 
           <v-col class="tw-mt-8" cols="12" md="3" lg="3">
-            <h3 class="tw-text-white tw-font-extrabold tw-mb-4">Useful Links</h3>
+            <h3 class="tw-text-white tw-font-extrabold tw-mb-4">Company</h3>
             <ul class="tw-list-disc tw-list-inside tw-text-gray-400 tw-leading-6">
               <li>
-                <a href="/privacy" class="tw-text-white tw-text-sm">Privacy Policy</a>
+                <a href="/privacy" class="tw-text-white tw-text-sm">About Us</a>
               </li>
               <li>
-                <a href="/contact" class="tw-text-white tw-text-sm">Contact us</a>
+                <a href="/contact" class="tw-text-white tw-text-sm">Products</a>
               </li>
 
               <li>
                 <a href="/contact" class="tw-text-white tw-text-sm">Contact us</a>
               </li>
-              <li>
-                <a href="/contact" class="tw-text-white tw-text-sm">Contact us</a>
-              </li>
+
+
 
 
             </ul>
           </v-col>
           <v-col class="tw-mt-8" cols="12" md="3" lg="3">
-            <h3 class="tw-text-white tw-font-extrabold tw-mb-4">Our Services</h3>
+            <h3 class="tw-text-white tw-font-extrabold tw-mb-4">Need Help</h3>
             <ul class="tw-list-disc tw-list-inside tw-text-gray-400 tw-leading-6">
               <li>
                 <a href="/privacy" class="tw-text-white tw-text-sm">Privacy Policy</a>
               </li>
               <li>
-                <a href="/contact" class="tw-text-white tw-text-sm">Contact us</a>
+                <a href="/contact" class="tw-text-white tw-text-sm">FAQ</a>
               </li>
 
               <li>
                 <a href="/privacy" class="tw-text-white tw-text-sm">Privacy Policy</a>
               </li>
-
-              <li>
-                <a href="/privacy" class="tw-text-white tw-text-sm">Privacy Policy</a>
-              </li>
-
 
             </ul>
           </v-col>
