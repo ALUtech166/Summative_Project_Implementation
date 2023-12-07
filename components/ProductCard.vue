@@ -1,21 +1,24 @@
 <!-- components/ProductCard.vue -->
 <template>
-    <div class="tw-h-full tw-cursor-pointer tw-w-full tw-shadow-xl tw-mb-4 tw-rounded">
+    <div class="tw-h-full tw-cursor-pointer tw-w-full tw-shadow-xl tw-mb-4 tw-rounded tw-bg-gray-100">
         <div class="tw-relative tw-w-full tw-h-72">
             <img class="tw-absolute tw-top-0 tw-left-0 tw-w-full tw-h-full tw-object-cover" :src="product.image"
                 alt="Banner Image">
             <div
                 class="tw-relative tw-w-full tw-h-full tw-flex tw-flex-col tw-justify-start tw-bg-gray-200 tw-bg-opacity-30">
                 <div class="tw-p-2 tw-text-right tw-mx-56">
-                    <svg width="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                        <g id="SVGRepo_iconCarrier">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M12 6.00019C10.2006 3.90317 7.19377 3.2551 4.93923 5.17534C2.68468 7.09558 2.36727 10.3061 4.13778 12.5772C5.60984 14.4654 10.0648 18.4479 11.5249 19.7369C11.6882 19.8811 11.7699 19.9532 11.8652 19.9815C11.9483 20.0062 12.0393 20.0062 12.1225 19.9815C12.2178 19.9532 12.2994 19.8811 12.4628 19.7369C13.9229 18.4479 18.3778 14.4654 19.8499 12.5772C21.6204 10.3061 21.3417 7.07538 19.0484 5.17534C16.7551 3.2753 13.7994 3.90317 12 6.00019Z"
-                                stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                        </g>
-                    </svg>
+                    <button @click="addToWaitlist(product)"
+                        class="tw-flex tw-items-center tw-bg-transparent tw-border-none tw-cursor-pointer">
+                        <svg width="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M12 6.00019C10.2006 3.90317 7.19377 3.2551 4.93923 5.17534C2.68468 7.09558 2.36727 10.3061 4.13778 12.5772C5.60984 14.4654 10.0648 18.4479 11.5249 19.7369C11.6882 19.8811 11.7699 19.9532 11.8652 19.9815C11.9483 20.0062 12.0393 20.0062 12.1225 19.9815C12.2178 19.9532 12.2994 19.8811 12.4628 19.7369C13.9229 18.4479 18.3778 14.4654 19.8499 12.5772C21.6204 10.3061 21.3417 7.07538 19.0484 5.17534C16.7551 3.2753 13.7994 3.90317 12 6.00019Z"
+                                    stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </g>
+                        </svg>
+                    </button>
                 </div>
 
                 <div
@@ -55,10 +58,10 @@
                 </button>
 
                 <button @click="$router.push(`/product/${product.id}`)"
-                    class="tw-group bg-hover tw-shadow-lg tw-rounded-lg tw-relative tw-h-12 tw-mt-2 tw-cursor-pointer hover:tw-transform hover:tw-duration-300 tw-w-48 tw-overflow-hidden tw-rounded-lg tw-text-lg tw-shadow-2xl">
+                    class="tw-group bg-hover tw-border-2 tw-border-black tw-cursor-pointer tw-shadow-lg tw-rounded-lg tw-relative tw-h-12 tw-mt-2 tw-cursor-pointer hover:tw-transform hover:tw-duration-300 tw-w-48 tw-overflow-hidden tw-rounded-lg tw-text-lg tw-shadow-2xl">
 
                     <div
-                        class="tw-absolute tw-inset-0 tw-w-full tw-bg-transparent tw--transition-all tw-duration-[250ms] tw-ease-out group-hover:tw-w-full">
+                        class="tw-absolute tw-inset-0 tw-w-full tw-bg-white tw--transition-all tw-duration-[250ms] tw-ease-out group-hover:tw-w-full">
                     </div>
                     <span
                         class="tw-relative tw-inline-flex tw-items-center tw-gap-2 tw-text-black group-hover:tw-text-black">
@@ -96,19 +99,17 @@ export default {
             this.$router.push({ name: 'product-id', params: { id: this.product.id } });
         },
 
+        addToWaitlist(product) {
+            // Dispatch an action to add the product to the waitlist
+            this.$store.dispatch('addToWaitlist', product);
+        },
+
     },
 };
 </script>
 
   
 <style scoped>
-button {
-    border: 1px solid #043CAA;
-    background-color: white;
-}
-
-
-
 .bg-color {
     background-color: #043CAA;
     color: white;

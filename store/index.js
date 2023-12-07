@@ -2,8 +2,11 @@
 
 export const state = () => ({
   cart: [],
+  waitlistedProducts: [], // Add the waitlistedProducts array to the state
 });
-
+export const getters = {
+  waitlistedProductsCount: (state) => state.waitlistedProducts.length,
+};
 export const mutations = {
   incrementQuantity(state, index) {
     // Vue's reactivity will handle the changes automatically
@@ -25,6 +28,24 @@ export const mutations = {
   removeFromCart(state, index) {
     state.cart.splice(index, 1);
   },
+
+  removeFromWaitlist(state, index) {
+    state.waitlistedProducts.splice(index, 1);
+  },
+
+  addToWaitlist(state, product) {
+    const existingProduct = state.waitlistedProducts.find(
+      (p) => p.id === product.id
+    );
+
+    if (existingProduct) {
+      // If the product is already in the waitlist, you can update its quantity or take other actions
+      existingProduct.quantity++;
+    } else {
+      // If the product is not in the waitlist, add it with a quantity of 1
+      state.waitlistedProducts.push({ ...product, quantity: 1 });
+    }
+  },
 };
 
 export const actions = {
@@ -39,5 +60,13 @@ export const actions = {
   },
   removeFromCart({ commit }, index) {
     commit("removeFromCart", index);
+  },
+
+  removeFromWaitlist({ commit }, index) {
+    commit("removeFromWaitlist", index);
+  },
+
+  addToWaitlist({ commit }, product) {
+    commit("addToWaitlist", product);
   },
 };

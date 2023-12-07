@@ -5,7 +5,7 @@
     <section>
       <div class="">
 
-        <v-carousel class="lg:tw-block tw-hidden" v-model="model" cycle :show-arrows="false" hide-delimiter-background>
+        <v-carousel class="lg:tw-block" v-model="model" cycle :show-arrows="false" hide-delimiter-background>
           <v-carousel-item v-for="(item, i) in items" :key="i" :src="item.src" cover></v-carousel-item>
         </v-carousel>
 
@@ -22,7 +22,7 @@
 
 
     <section
-      class="tw-container tw-py-4 lg:tw-px-4 tw-mb-8 lg:tw-mx-12 tw-mx-8 lg:tw-px-desktop lg:tw-mx-desktop tw-bg-[#fff] tw-rounded-2xl tw-justify-center">
+      class="lg:tw-container tw-py-4 lg:tw-px-4 tw-mb-8 lg:tw-mx-12 tw-mx-8 lg:tw-px-desktop lg:tw-mx-desktop tw-bg-[#fff] tw-rounded-2xl tw-justify-center">
       <div class="tw-mt-8 tw-container tw-flex tw-flex-col tw-flex-col-reverse lg:tw-flex-row lg:tw-gap-12">
 
         <div class="tw-basis-1/2 tw-mt-12">
@@ -65,7 +65,7 @@
         </h1>
 
 
-        <div class="tw-border-2 tw-border-black tw-p-12">
+        <div class="tw-border-2 tw-border-black lg:tw-p-12 tw-p-6">
           <v-row>
             <v-col v-for="product in products" :key="product.id" cols="12" md="8" lg="3">
               <ProductCard :product="product" />
@@ -85,7 +85,7 @@
         </h1>
 
 
-        <div class="tw-border-2 tw-border-black tw-p-12">
+        <div class="tw-border-2 tw-border-black lg:tw-p-12 tw-p-6">
           <v-row>
             <v-col v-for="product in products" :key="product.id" cols="12" md="8" lg="3">
               <ProductCard :product="product" />

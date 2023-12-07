@@ -1,6 +1,6 @@
 <template>
-    <div class="tw-m-8 tw-flex">
-        <div class="tw-flex-1">
+    <div class="tw-m-8 tw-flex tw-flex-col lg:tw-flex-row tw-gap-4">
+        <div class="lg:tw-flex-1">
             <div class="tw-bg-white tw-rounded-md tw-shadow-md tw-p-6">
                 <h2 class="tw-text-2xl tw-font-semibold tw-mb-4">Shopping Cart</h2>
 
@@ -61,7 +61,7 @@
             </div>
         </div>
 
-        <aside class="tw-w-1/3 tw-ml-4">
+        <aside class="lg:tw-w-1/3 lg:tw-ml-4">
             <div class="tw-bg-white tw-rounded-md tw-shadow-md tw-p-6">
                 <h2 class="tw-text-2xl tw-font-semibold tw-mb-4">Checkout</h2>
                 <form class="" v-on:submit.prevent="sendMessage">
