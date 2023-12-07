@@ -266,16 +266,16 @@ export default {
 }
 
 .bg-color {
-  background-color: #0B2447;
+  background-color: #043CAA;
 }
 
 :hover.hover-bg {
-  background-color: #0B2447;
+  background-color: #043CAA;
 }
 
 
 .text-color {
-  color: #0B2447;
+  color: #043CAA;
 }
 
 

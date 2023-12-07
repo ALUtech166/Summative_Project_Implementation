@@ -17,12 +17,34 @@
                                     class="tw-bg-gray-300 tw-p-2 tw-rounded-full tw-mr-2">
                                     -
                                 </button>
-                                <span class="tw-mx-2">{{ item.quantity }}</span>
+                                <input type="number" v-model="item.quantity" @input="updateTotal(index)"
+                                    class="tw-w-10 tw-text-center tw-border tw-rounded" />
                                 <button @click="incrementQuantity(index)"
                                     class="tw-bg-gray-300 tw-p-2 tw-rounded-full tw-ml-2">
                                     +
                                 </button>
                             </div>
+
+                            <button @click="removeFromCart(index)" class="tw-text-white tw-p-2 tw-rounded">
+                                <svg width="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                    <g id="SVGRepo_iconCarrier">
+                                        <path d="M10 11V17" stroke="#e01b24" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                        <path d="M14 11V17" stroke="#e01b24" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                        <path d="M4 7H20" stroke="#e01b24" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                        <path d="M6 7H12H18V18C18 19.6569 16.6569 21 15 21H9C7.34315 21 6 19.6569 6 18V7Z"
+                                            stroke="#e01b24" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                        <path d="M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V7H9V5Z"
+                                            stroke="#e01b24" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                    </g>
+                                </svg>
+                            </button>
                         </div>
 
 
@@ -114,11 +136,22 @@ export default {
         };
     },
     methods: {
+        removeFromCart(index) {
+            this.$store.dispatch("removeFromCart", index);
+        },
         decrementQuantity(index) {
-            this.$store.commit('decrementQuantity', index);
+            this.$store.dispatch('decrementQuantity', index);
         },
         incrementQuantity(index) {
-            this.$store.commit('incrementQuantity', index);
+            this.$store.dispatch('incrementQuantity', index);
+        },
+        updateTotal(index) {
+            // Handle any additional logic if needed when the quantity is updated
+            // For now, we'll simply update the total
+            this.$forceUpdate(); // Forces a re-render to update the total
+        },
+        calculateTotal(item) {
+            return (item.price * item.quantity).toFixed(2);
         },
         checkout() {
             // Implement checkout logic, e.g., redirect to a payment page
