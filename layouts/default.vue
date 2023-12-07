@@ -8,7 +8,7 @@
         <div>
           <nuxt-link to="/">
             <h1 class="tw-text-4xl tw-font-extrabold text-color">
-              EP
+              E-pharma
             </h1>
           </nuxt-link>
 

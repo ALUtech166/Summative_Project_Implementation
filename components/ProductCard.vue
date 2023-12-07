@@ -39,7 +39,7 @@
                 {{ product.name }}
             </span>
             <span class="tw-px-3 text-color tw-text-md tw-font-extrabold tw-text-left">
-                {{ product.price }}
+                ${{ product.price }}
             </span>
             <div class="tw-flex tw-flex-col lg:tw-flex-row tw-gap-2 tw-px-2">
                 <button @click="addToCart"
